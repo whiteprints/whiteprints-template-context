@@ -4,12 +4,19 @@
 """Update Copier context."""
 
 import re
+import sys
 import unicodedata
 from functools import lru_cache
-from typing import Any, Dict, Set
+from typing import Any
 
 from copier_templates_extensions import ContextHook
 from license_expression import get_spdx_licensing
+
+
+if sys.version_info < (3, 12):
+    from typing_extensions import override
+else:
+    from typing import override
 
 
 # SPDX-SnippetBegin
@@ -18,7 +25,7 @@ from license_expression import get_spdx_licensing
 # SPDX-FileCopyrightText: © 2024 The Whiteprints Authors <whiteprints@pm.me>
 
 
-def slugify(value: str, allow_unicode: bool = False) -> str:
+def slugify(value: str, *, allow_unicode: bool = False) -> str:
     """Slugify.
 
     Convert to ASCII if "allow_unicode" is False. Convert spaces or repeated
@@ -45,7 +52,7 @@ def slugify(value: str, allow_unicode: bool = False) -> str:
 
 
 @lru_cache
-def spdx_symbols(expression: str) -> Set[str]:
+def spdx_symbols(expression: str) -> set[str]:
     """Returns the set of SPDX symbols in an expression."""
     licensing = get_spdx_licensing()
     return {
@@ -57,7 +64,8 @@ def spdx_symbols(expression: str) -> Set[str]:
 class ContextUpdater(ContextHook):
     """Context updater hook."""
 
-    def hook(self, context: Dict[str, Any]) -> Dict[str, Any]:
+    @override
+    def hook(self, context: dict[str, Any]) -> dict[str, Any]:
         latest_python = 13
         target_python_minor = context["target_python_version"][3:]
 

@@ -60,6 +60,15 @@ wheels = [
 ]
 
 [[package]]
+name = "boolean-py"
+version = "4.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/a2/d9/b6e56a303d221fc0bdff2c775e4eef7fedd58194aa5a96fa89fb71634cc9/boolean.py-4.0.tar.gz", hash = "sha256:17b9a181630e43dde1851d42bef546d616d5d9b4480357514597e78b203d06e4", size = 34504 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3f/02/6389ef0529af6da0b913374dedb9bbde8eabfe45767ceec38cc37801b0bd/boolean.py-4.0-py3-none-any.whl", hash = "sha256:2876f2051d7d6394a531d82dc6eb407faa0b01a0a0b3083817ccd7323b8d96bd", size = 25909 },
+]
+
+[[package]]
 name = "cloudpickle"
 version = "3.0.0"
 source = { registry = "https://pypi.org/simple" }
@@ -385,6 +394,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/de/7c/ee2f2014a2a0616ad3328e58e7dac879251babdb4cb796d770b5d32c469f/jinja2-time-0.2.0.tar.gz", hash = "sha256:d14eaa4d315e7688daa4969f616f226614350c48730bfa1692d2caebd8c90d40", size = 5701 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/6a/a1/d44fa38306ffa34a7e1af09632b158e13ec89670ce491f8a15af3ebcb4e4/jinja2_time-0.2.0-py2.py3-none-any.whl", hash = "sha256:d3eab6605e3ec8b7a0863df09cc1d23714908fa61aa6986a845c20ba488b4efa", size = 6360 },
+]
+
+[[package]]
+name = "license-expression"
+version = "30.3.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "boolean-py" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/57/8b/dbe230196eee2de208ba87dcfae69c46db9d7ed70e2f30f143bf994ee075/license_expression-30.3.1.tar.gz", hash = "sha256:60d5bec1f3364c256a92b9a08583d7ea933c7aa272c8d36d04144a89a3858c01", size = 174601 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/91/84/a7cf5dfa141501a20cb63595f02edfe38e0db2e3cc34e4f3cd273cc285df/license_expression-30.3.1-py3-none-any.whl", hash = "sha256:97904b9185c7bbb1e98799606fa7424191c375e70ba63a524b6f7100e42ddc46", size = 109008 },
 ]
 
 [[package]]
@@ -1133,11 +1154,12 @@ wheels = [
 
 [[package]]
 name = "whiteprints-template-context"
-version = "0.1.dev4+g30fb72d.d20241006"
+version = "0.1.dev5+g02c9382.d20241006"
 source = { editable = "." }
 dependencies = [
     { name = "copier-templates-extensions" },
     { name = "jinja2-time" },
+    { name = "license-expression" },
 ]
 
 [package.dev-dependencies]
@@ -1158,8 +1180,9 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "copier-templates-extensions", specifier = ">=0.3.0" },
-    { name = "jinja2-time", specifier = ">=0.2.0" },
+    { name = "copier-templates-extensions", specifier = ">=0.3" },
+    { name = "jinja2-time", specifier = ">=0.2" },
+    { name = "license-expression", specifier = ">=30.3.1" },
 ]
 
 [package.metadata.requires-dev]

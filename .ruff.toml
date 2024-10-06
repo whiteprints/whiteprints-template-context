@@ -28,7 +28,8 @@ exclude = [
     "venv",
     "template",
     "hatch_build.py",
-    "scripts"
+    "scripts",
+    "src/stubs/**/*.pyi",
 ]
 force-exclude = true
 
