@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: © 2024 The "Whiteprints template context" contributors <whiteprints@pm.me>
+#
+# SPDX-License-Identifier: MIT
+
+coverage:
+  status:
+    project:
+      default:
+        target: auto
+        threshold: 0
+        flags:
+          - unit
+        paths:
+          - "src"
+          - "tests"
