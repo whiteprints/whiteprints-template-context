@@ -6,7 +6,9 @@ SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 # 🛠️ Codebase Overview
 
-The project is organised as follow.
+The project is hosted on [https://github.com/whiteprints/whiteprints-template-context.git](https://github.com/whiteprints/whiteprints-template-context.git).
+
+It is organised as follow.
 
 ## Files and directories
 

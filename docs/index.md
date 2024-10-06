@@ -18,5 +18,6 @@ Home <self>
 Guide <guide>
 Reference <autoapi/index>
 Licensing <licensing_index>
+Releases <https://github.com/whiteprints/whiteprints-template-context/releases>
 Contributing <contributing_index>
 ```

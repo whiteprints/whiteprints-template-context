@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 The "Whiteprints template context" contributors <whiteprints@pm.me>
+# SPDX-FileCopyrightText: © 2024 The "Whiteprints template context" contributors <whiteprints@pm.me>
 #
 # SPDX-License-Identifier: MIT
 
@@ -15,7 +15,6 @@ keywords = [
     "Python",
 ]
 license = "MIT"
-
 license-files.paths = [
     "LICENSES/CC-BY-NC-SA-4.0.txt",
     "LICENSES/MIT.txt",
@@ -49,6 +48,15 @@ dynamic = [
     "version",
 ]
 dependencies = [  ]
+
+urls.changelog = "https://github.com/whiteprints/whiteprints-template-context/releases"
+urls.discussions = "https://github.com/whiteprints/whiteprints-template-context/discussions"
+urls.documentation = "https://github.com/whiteprints/whiteprints-template-context"
+urls.download = "https://github.com/whiteprints/whiteprints-template-context/releases"
+urls.homepage = "https://github.com/whiteprints/whiteprints-template-context"
+urls.integration = "https://github.com/whiteprints/whiteprints-template-context/actions"
+urls.issues = "https://github.com/whiteprints/whiteprints-template-context/issues"
+urls.repository = "https://github.com/whiteprints/whiteprints-template-context"
 
 [tool.uv]
 managed = true
