@@ -47,7 +47,10 @@ dynamic = [
     "readme",
     "version",
 ]
-dependencies = [  ]
+dependencies = [
+    "copier-templates-extensions>=0.3",
+    "jinja2-time>=0.2",
+]
 
 urls.changelog = "https://github.com/whiteprints/whiteprints-template-context/releases"
 urls.discussions = "https://github.com/whiteprints/whiteprints-template-context/discussions"
