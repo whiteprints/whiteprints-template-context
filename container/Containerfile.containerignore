@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: © 2024 The "Whiteprints template context" contributors <whiteprints@pm.me>
+#
+# SPDX-License-Identifier: MIT
+
+# Ignore everything.
+**
+
+# Except the following.
+
+## Sources
+!src/
+!.git/
+!pyproject.toml
+!hatch.toml
+!hatch_build.py
+!LICENSES
+!README.md
+!uv.lock
+
+## Template
+!template
+!jinja_template
+!copier.yml

@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: © 2024 The "Whiteprints template context" contributors <whiteprints@pm.me>
+#
+# SPDX-License-Identifier: MIT
+
+version = 1
+SPDX-PackageName = "whiteprints_template_context"
+SPDX-PackageSupplier = "whiteprints <>"
