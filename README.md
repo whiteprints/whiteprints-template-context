@@ -27,7 +27,7 @@ SPDX-License-Identifier: CC-BY-NC-SA-4.0
 ## Table of contents
 
 - [Background](#background)
-- [Usage](#highlights)
+- [Usage](#usage)
 - [Install](#install)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
