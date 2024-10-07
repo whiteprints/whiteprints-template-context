@@ -35,11 +35,18 @@ SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 ## Background
 
-...
+This package is an internal dependencies of Whiteprints template. It uses
+Jinja2 extentions to prepare [Copier](https://github.com/copier-org/copier).
+It also defines useful Jinja filters.
 
-## Highlights
+## Usage
 
-...
+To activate the template just add the following to copier.yml:
+
+```yaml
+_jinja_extensions:
+  - whiteprints_template_context.context.ContextUpdater
+```
 
 ## Install
 
