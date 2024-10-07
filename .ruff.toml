@@ -29,7 +29,6 @@ exclude = [
     "template",
     "hatch_build.py",
     "scripts",
-    "src/stubs/**/*.pyi",
 ]
 force-exclude = true
 

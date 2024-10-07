@@ -7,10 +7,13 @@ import re
 import sys
 import unicodedata
 from functools import lru_cache
-from typing import Any
+from typing import Any, Final, cast
 
 from copier_templates_extensions import ContextHook
-from license_expression import get_spdx_licensing
+from license_expression import (  # type: ignore [reportMissingTypeStubs]
+    BaseSymbol,
+    get_spdx_licensing,
+)
 
 
 if sys.version_info < (3, 12):
@@ -19,9 +22,12 @@ else:
     from typing import override
 
 
+LATEST_PYTHON: Final = 13
+
+
 # SPDX-SnippetBegin
 # SPDX-License-Identifier: BSD-3-Clause
-# SPDX-SnippetCopyrightText: Copyright (c) Django Software Foundation and individual contributors.
+# SPDX-FileCopyrightText: Copyright (c) Django Software Foundation and individual contributors.
 # SPDX-FileCopyrightText: © 2024 The Whiteprints Authors <whiteprints@pm.me>
 
 
@@ -55,10 +61,13 @@ def slugify(value: str, *, allow_unicode: bool = False) -> str:
 def spdx_symbols(expression: str) -> set[str]:
     """Returns the set of SPDX symbols in an expression."""
     licensing = get_spdx_licensing()
-    return {
-        license_symbol.obj
-        for license_symbol in licensing.license_symbols(expression)
-    }
+    license_symbols = cast(
+        list[BaseSymbol],
+        licensing.license_symbols(  # type: ignore [reportGeneralTypeIssues]
+            expression
+        ),
+    )
+    return {symbol.obj for symbol in license_symbols}
 
 
 class ContextUpdater(ContextHook):
@@ -66,7 +75,7 @@ class ContextUpdater(ContextHook):
 
     @override
     def hook(self, context: dict[str, Any]) -> dict[str, Any]:
-        latest_python = 13
+        latest_python = LATEST_PYTHON
         target_python_minor = context["target_python_version"][3:]
 
         context["latest_python"] = latest_python
