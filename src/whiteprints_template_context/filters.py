@@ -58,25 +58,28 @@ def is_spdx_expression(value: str) -> bool:
     """
     licensing = get_spdx_licensing()
     try:
-        expression_info = licensing.validate(  # type: ignore [reportGeneralTypeIssues]
-           value
+        info = licensing.validate(  # type: ignore [reportGeneralTypeIssues]
+            value
         )
     except AttributeError as expression_parse_error:
         raise LicenseExpressionError from expression_parse_error
 
-    if expression_info.errors:  # type: ignore [reportGeneralTypeIssues]
-        raise LicenseExpressionError(expression_info)
+    if info.errors:  # type: ignore [reportGeneralTypeIssues]
+        raise LicenseExpressionError(info)
 
     return True
 
 
-class WhiteprintsFilters(Extension):
+class WhiteprintsFilters(Extension):  # pylint: disable=abstract-method
+    # Pylint tells that parse method need to be overriden, but is our case
+    # it is not necessary.
     """Jinja2 extension for adding custom filters.
 
     Args:
         environment (Environment): The Jinja2 environment to which the filter
             is added.
     """
+
     def __init__(self, environment: Environment) -> None:
         """Instantiate a WhiteprintsFilters."""
         super().__init__(environment)
