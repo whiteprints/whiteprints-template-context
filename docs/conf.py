@@ -37,9 +37,7 @@ autoapi_template_dir = "_autoapi_templates"
 autoapi_options = [
     "members",
     "undoc-members",
-    "inherited-members",
     "special-members",
-    "show-inheritance",
     "show-module-summary",
     "imported-members",
 ]
