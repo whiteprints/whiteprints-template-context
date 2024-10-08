@@ -11,4 +11,8 @@ To activate the template just add the following to copier.yml:
 ```yaml
 _jinja_extensions:
   - whiteprints_template_context.context.ContextUpdater
+  - whiteprints_template_context.filters.WhiteprintsFilters
 ```
+
+This will enhance copier's context with additional variables and filters that
+are required by Whiteprints templates.
