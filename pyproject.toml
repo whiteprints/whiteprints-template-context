@@ -41,6 +41,7 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Typing :: Typed",
 ]
 dynamic = [
@@ -63,6 +64,12 @@ urls.integration = "https://github.com/whiteprints/whiteprints-template-context/
 urls.issues = "https://github.com/whiteprints/whiteprints-template-context/issues"
 urls.pypi = "https://pypi.org/project/whiteprints-template-context"
 urls.repository = "https://github.com/whiteprints/whiteprints-template-context"
+
+[tool.pyproject-fmt]
+column_width = 79
+indent = 4
+keep_full_version = false
+max_supported_python = "3.13"
 
 [tool.uv]
 managed = true
