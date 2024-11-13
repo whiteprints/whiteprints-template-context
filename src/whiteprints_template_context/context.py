@@ -18,10 +18,10 @@ from license_expression import (  # type: ignore [reportMissingTypeStubs]
 )
 
 
-if sys.version_info < (3, 12):
-    from typing_extensions import override
-else:
+if sys.version_info >= (3, 12):
     from typing import override
+else:
+    from typing_extensions import override
 
 
 LATEST_PYTHON: Final = 13

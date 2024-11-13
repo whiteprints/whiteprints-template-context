@@ -1152,7 +1152,7 @@ wheels = [
 
 [[package]]
 name = "whiteprints-template-context"
-version = "0.1.0a1.dev0+g62f45b9.d20241008"
+version = "0.2.2.dev3+gd45a074.d20241113"
 source = { editable = "." }
 dependencies = [
     { name = "copier-templates-extensions" },
@@ -1179,7 +1179,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "copier-templates-extensions", specifier = ">=0.3.0" },
+    { name = "copier-templates-extensions", specifier = ">=0.3" },
     { name = "jinja2-time", specifier = ">=0.2" },
     { name = "license-expression", specifier = ">=30.3.1" },
     { name = "typing-extensions", marker = "python_full_version < '3.12'", specifier = ">=4.12.2" },
