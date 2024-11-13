@@ -38,9 +38,9 @@ class TestIsSpdxExpression:
     @given(VALID_SPDX_STRATEGY)
     def test_valid_spdx_expression(value: str) -> None:
         """Test that valid SPDX expressions are recognized as valid."""
-        assert is_spdx_expression(
-            value
-        ), f"Valid SPDX expression '{value}' should pass validation"
+        assert is_spdx_expression(value), (
+            f"Valid SPDX expression '{value}' should pass validation"
+        )
 
     @staticmethod
     @given(INVALID_SPDX_STRATEGY)
@@ -54,6 +54,6 @@ def test_spdx_expression_filter_added() -> None:
     """Test that 'spdx_expression' test is added to the environment."""
     env = Environment(autoescape=True)
     WhiteprintsFilters(env)
-    assert (
-        "spdx_expression" in env.tests
-    ), "'spdx_expression' should be available in Jinja2 tests"
+    assert "spdx_expression" in env.tests, (
+        "'spdx_expression' should be available in Jinja2 tests"
+    )
