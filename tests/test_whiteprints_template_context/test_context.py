@@ -41,9 +41,9 @@ class TestSlugify:
         """Test the slugify function with Unicode characters."""
         result_unicode = slugify(value, allow_unicode=True)
         if value:
-            assert re.match(
-                r"^[\w\s-]*$", result_unicode
-            ), "Unicode slug not valid"
+            assert re.match(r"^[\w\s-]*$", result_unicode), (
+                "Unicode slug not valid"
+            )
 
     @staticmethod
     @given(TEXT_STRATEGY)
@@ -51,9 +51,9 @@ class TestSlugify:
         """Test the slugify function with ASCII characters."""
         result_ascii = slugify(value, allow_unicode=False)
         if value:
-            assert re.match(
-                r"^[a-z0-9-_]*$", result_ascii
-            ), "ASCII slug not valid"
+            assert re.match(r"^[a-z0-9-_]*$", result_ascii), (
+                "ASCII slug not valid"
+            )
 
 
 class TestSpdxSymbols:
@@ -110,9 +110,9 @@ class TestContextUpdater:
         """Test that the latest Python version is set correctly."""
         updater = ContextUpdater(environment)
         updated_context = updater.hook(context)
-        assert (
-            updated_context["latest_python"] == LATEST_PYTHON
-        ), "Latest Python version mismatch"
+        assert updated_context["latest_python"] == LATEST_PYTHON, (
+            "Latest Python version mismatch"
+        )
 
     @staticmethod
     @given(ENVIRONMENT_EXAMPLES)
@@ -123,9 +123,9 @@ class TestContextUpdater:
         """Test that the project name is slugified correctly."""
         updater = ContextUpdater(environment)
         updated_context = updater.hook(context)
-        assert (
-            updated_context["project_slug"] == "test-project"
-        ), "Slugify failed"
+        assert updated_context["project_slug"] == "test-project", (
+            "Slugify failed"
+        )
 
     @staticmethod
     @given(ENVIRONMENT_EXAMPLES)
@@ -136,9 +136,9 @@ class TestContextUpdater:
         """Test that the package name is derived correctly."""
         updater = ContextUpdater(environment)
         updated_context = updater.hook(context)
-        assert (
-            updated_context["package_name"] == "test_project"
-        ), "Package name mismatch"
+        assert updated_context["package_name"] == "test_project", (
+            "Package name mismatch"
+        )
 
     @staticmethod
     @given(ENVIRONMENT_EXAMPLES)
@@ -149,9 +149,9 @@ class TestContextUpdater:
         """Test that the target Python version is set correctly."""
         updater = ContextUpdater(environment)
         updated_context = updater.hook(context)
-        assert (
-            updated_context["target_python"] == "3.10"
-        ), "Target Python version mismatch"
+        assert updated_context["target_python"] == "3.10", (
+            "Target Python version mismatch"
+        )
 
     @staticmethod
     @given(ENVIRONMENT_EXAMPLES)
@@ -162,9 +162,9 @@ class TestContextUpdater:
         """Test that the code license symbols are updated correctly."""
         updater = ContextUpdater(environment)
         updated_context = updater.hook(context)
-        assert (
-            "MIT" in updated_context["code_license_symbols"]
-        ), "License symbol mismatch"
+        assert "MIT" in updated_context["code_license_symbols"], (
+            "License symbol mismatch"
+        )
 
     @staticmethod
     @given(ENVIRONMENT_EXAMPLES)
@@ -175,9 +175,9 @@ class TestContextUpdater:
         """Test that the extended license text."""
         updater = ContextUpdater(environment)
         updated_context = updater.hook(context)
-        assert updated_context["code_license_text_ext"].startswith(
-            "[MIT]"
-        ), "SPDX link not replaced"
+        assert updated_context["code_license_text_ext"].startswith("[MIT]"), (
+            "SPDX link not replaced"
+        )
 
     @staticmethod
     @given(ENVIRONMENT_EXAMPLES)
@@ -188,6 +188,6 @@ class TestContextUpdater:
         """Test that the code license text is correctly replaced."""
         updater = ContextUpdater(environment)
         updated_context = updater.hook(context)
-        assert updated_context["code_license_text"].startswith(
-            "[MIT]"
-        ), "License text replacement failed"
+        assert updated_context["code_license_text"].startswith("[MIT]"), (
+            "License text replacement failed"
+        )
