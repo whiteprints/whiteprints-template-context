@@ -70,7 +70,7 @@ def spdx_symbols(expression: str) -> set[str]:
     """
     licensing = get_spdx_licensing()
     license_symbols = cast(
-        "list[BaseSymbol]",
+        list[BaseSymbol],
         licensing.license_symbols(  # type: ignore [reportGeneralTypeIssues]
             expression
         ),
