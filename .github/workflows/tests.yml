@@ -9,8 +9,6 @@ on:
     branches: ["main"]
     tags-ignore: ["**"]
   pull_request:
-  schedule:
-    - cron: "0 8 * * *"
 
 concurrency:
   group: test-${{ github.ref }}
@@ -171,13 +169,7 @@ jobs:
       matrix:
         image:
           - name: alpine
-            python: 3.13.0
-            base: alpine3.20
-            digest: ""
           - name: debian
-            python: 3.13.0
-            base: slim-bookworm
-            digest: ""
     steps:
       - name: Check out the repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -211,9 +203,6 @@ jobs:
             ${{ steps.meta.outputs.tags }}-${{ matrix.image.base }}
           annotations: ${{ steps.meta.outputs.annotations }}
           build-args: |
-            PYTHON_VERSION=${{ matrix.image.python }}
-            BASE_OS=${{ matrix.image.base }}
-            DIGEST=${{ matrix.image.digest }}
             VERSION=${{ steps.meta.outputs.version }}
             REVISION=${{ github.sha }}
             BUILD_DATE=${{ env.BUILD_DATE }}
