@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: © 2024 The "Whiteprints template context" contributors <whiteprints@pm.me>
+# SPDX-FileCopyrightText: © 2024 The "Whiteprints" contributors <whiteprints@pm.me>
 #
 # SPDX-License-Identifier: MIT
 
@@ -18,20 +18,6 @@ from pathlib import Path
 
 import click
 from semver import Version
-
-
-BASE_IMAGE = {
-    "alpine": {
-        "PYTHON_VERSION": "3.13.0",
-        "BASE_OS": "alpine3.20",
-        "DIGEST": "sha256:81362dd1ee15848b118895328e56041149e1521310f238ed5b2cdefe674e6dbf"
-    },
-    "debian": {
-        "PYTHON_VERSION": "3.13.0",
-        "BASE_OS": "slim-bookworm",
-        "DIGEST": "sha256:2ec5a4a5c3e919570f57675471f081d6299668d909feabd8d4803c6c61af666c",
-    },
-}
 
 
 def run_command(command: str, args: list[str], *, capture_output: bool = True) -> str | None:
@@ -113,7 +99,17 @@ def get_current_commit_hash() -> str:
     except subprocess.CalledProcessError:
         commit_hash = ""
 
-    return commit_hash
+    return commit_hash or ""
+
+
+def build_wheel() -> None:
+    """Build the project wheel."""
+    build_command = [
+        "run",
+        "-e",
+        "distribute",
+    ]
+    run_command("tox", build_command, capture_output=False)
 
 
 def build_container(
@@ -159,16 +155,13 @@ def build_container_image(additional_tag: list[str], os: str, extra_args: list[s
         ),
     }
     name = "whiteprints-template-context"
-    base_image = BASE_IMAGE.get(os, {})
-    default_tag = f"{name}:{package['VERSION']}-py{base_image['PYTHON_VERSION']}-{base_image['BASE_OS']}"
-    all_tags = [default_tag, *(f"{name}:{tag}" for tag in additional_tag)]
+    all_tags = [*(f"{name}:{tag}" for tag in additional_tag)]
 
     build_container(
         context_path=Path(),
         file=Path() / "container" / f"Containerfile.{os}",
         tags=all_tags,
         build_args={
-            **base_image,
             **package,
             "UV_COMPILE_BYTECODE": 1,
             "REVISION": get_current_commit_hash(),
@@ -177,6 +170,16 @@ def build_container_image(additional_tag: list[str], os: str, extra_args: list[s
         extra_args=list(extra_args),
     )
 
+
+def containerfiles() -> list[str]:
+    """Find containersfiles."""
+    return [
+        str(containerfile).split(".", maxsplit=1)[1]
+        for containerfile in filter(
+            lambda name: ".containerignore" not in str(name),
+            (Path() / "container").glob(r"Containerfile.*")
+        )
+    ]
 
 @click.command(context_settings={"ignore_unknown_options": True})
 @click.option(
@@ -187,7 +190,7 @@ def build_container_image(additional_tag: list[str], os: str, extra_args: list[s
 )
 @click.argument(
     "os",
-    type=click.Choice([*BASE_IMAGE.keys(), "all"], case_sensitive=False),
+    type=click.Choice([*containerfiles(), "all"], case_sensitive=False),
 )
 @click.argument(
     "extra_args",
@@ -202,8 +205,9 @@ def main(additional_tag: list[str], os: str, extra_args: list[str]) -> None:
     settings. It also sets build arguments such as the current commit hash and
     build date.
     """
+    build_wheel()
     if os == "all":
-        for specific_os in BASE_IMAGE:
+        for specific_os in containerfiles():
             build_container_image(
                 additional_tag,
                 os=specific_os,
@@ -212,7 +216,7 @@ def main(additional_tag: list[str], os: str, extra_args: list[str]) -> None:
     else:
         build_container_image(
             additional_tag,
-            os=specific_os,
+            os=os,
             extra_args=extra_args,
         )
 
