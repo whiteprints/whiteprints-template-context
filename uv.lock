@@ -2294,7 +2294,7 @@ wheels = [
 
 [[package]]
 name = "whiteprints-template-context"
-version = "0.3.1.dev22+g98f89aa.d20241206"
+version = "0.3.1.dev23+gbab34db"
 source = { editable = "." }
 dependencies = [
     { name = "copier-templates-extensions" },
