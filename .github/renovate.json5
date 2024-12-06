@@ -49,6 +49,7 @@
       matchManagers: [
         'pep621',
       ],
+      rangeStrategy: 'update-lockfile',
       matchFileNames: [
         'pyproject.toml',
       ],

@@ -97,7 +97,7 @@ editor = [
     "pynvim>=0.4.3",
 ]
 profile = [
-    "scalene>=1.5.19",
+    "scalene>=1.5.49",
 ]
 lint = [
     "pylint>=3.2.6",
