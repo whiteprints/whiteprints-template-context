@@ -117,7 +117,7 @@ audit-maintainability = [
     "radon>=6.0.1",
 ]
 check-exceptions = [
-    "tryceratops>=2.4",
+    "tryceratops>=2.4.0",
 ]
 check-maintainability = [
     "xenon>=0.9.3",
@@ -127,13 +127,13 @@ check-vulnerabilities = [
 ]
 build-documentation = [
     "myst-parser[linkify]>=3.0.1",
-    "pydata-sphinx-theme>=0.16",
-    "sphinx>=7.4.7",
+    "pydata-sphinx-theme>=0.16.0",
+    "sphinx>=7.4.0",
     "sphinx-autoapi>=3.3.3",
     "sphinx-click>=6",
     "sphinx-copybutton>=0.5.2",
-    "sphinxcontrib-napoleon>=0.7",
-    "sphinxcontrib-spelling>=8",
+    "sphinxcontrib-napoleon>=0.7.0",
+    "sphinxcontrib-spelling>=8.0.0",
 ]
 serve-documentation = [
     "sphinx-autobuild>=2024.10.3",

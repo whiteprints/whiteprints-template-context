@@ -2294,7 +2294,7 @@ wheels = [
 
 [[package]]
 name = "whiteprints-template-context"
-version = "0.3.1.dev22+g98f89aa.d20241206"
+version = "0.3.1.dev23+gbab34db.d20241206"
 source = { editable = "." }
 dependencies = [
     { name = "copier-templates-extensions" },
@@ -2430,15 +2430,15 @@ audit-maintainability = [{ name = "radon", specifier = ">=6.0.1" }]
 audit-vulnerabilities = [{ name = "pip-audit", specifier = ">=2.7.3" }]
 build-documentation = [
     { name = "myst-parser", extras = ["linkify"], specifier = ">=3.0.1" },
-    { name = "pydata-sphinx-theme", specifier = ">=0.16" },
-    { name = "sphinx", specifier = ">=7.4.7" },
+    { name = "pydata-sphinx-theme", specifier = ">=0.16.0" },
+    { name = "sphinx", specifier = ">=7.4.0" },
     { name = "sphinx-autoapi", specifier = ">=3.3.3" },
     { name = "sphinx-click", specifier = ">=6" },
     { name = "sphinx-copybutton", specifier = ">=0.5.2" },
-    { name = "sphinxcontrib-napoleon", specifier = ">=0.7" },
-    { name = "sphinxcontrib-spelling", specifier = ">=8" },
+    { name = "sphinxcontrib-napoleon", specifier = ">=0.7.0" },
+    { name = "sphinxcontrib-spelling", specifier = ">=8.0.0" },
 ]
-check-exceptions = [{ name = "tryceratops", specifier = ">=2.4" }]
+check-exceptions = [{ name = "tryceratops", specifier = ">=2.4.0" }]
 check-maintainability = [{ name = "xenon", specifier = ">=0.9.3" }]
 check-types = [
     { name = "beartype", specifier = ">=0.18.5" },
@@ -2461,7 +2461,7 @@ dev = [
     { name = "hypothesis", specifier = ">=6.110.1" },
     { name = "myst-parser", extras = ["linkify"], specifier = ">=3.0.1" },
     { name = "pip-audit", specifier = ">=2.7.3" },
-    { name = "pydata-sphinx-theme", specifier = ">=0.16" },
+    { name = "pydata-sphinx-theme", specifier = ">=0.16.0" },
     { name = "pylint", specifier = ">=3.2.6" },
     { name = "pynvim", specifier = ">=0.4.3" },
     { name = "pytest", specifier = ">=8.3.2" },
@@ -2472,14 +2472,14 @@ dev = [
     { name = "pytest-xdist", specifier = ">=3.6.1" },
     { name = "radon", specifier = ">=6.0.1" },
     { name = "scalene", specifier = ">=1.5.49" },
-    { name = "sphinx", specifier = ">=7.4.7" },
+    { name = "sphinx", specifier = ">=7.4.0" },
     { name = "sphinx-autoapi", specifier = ">=3.3.3" },
     { name = "sphinx-autobuild", specifier = ">=2024.10.3" },
     { name = "sphinx-click", specifier = ">=6" },
     { name = "sphinx-copybutton", specifier = ">=0.5.2" },
-    { name = "sphinxcontrib-napoleon", specifier = ">=0.7" },
-    { name = "sphinxcontrib-spelling", specifier = ">=8" },
-    { name = "tryceratops", specifier = ">=2.4" },
+    { name = "sphinxcontrib-napoleon", specifier = ">=0.7.0" },
+    { name = "sphinxcontrib-spelling", specifier = ">=8.0.0" },
+    { name = "tryceratops", specifier = ">=2.4.0" },
     { name = "xdoctest", specifier = ">=1.2" },
     { name = "xenon", specifier = ">=0.9.3" },
 ]
@@ -2500,14 +2500,14 @@ localization = [{ name = "babel", specifier = ">=2.16" }]
 profile = [{ name = "scalene", specifier = ">=1.5.49" }]
 serve-documentation = [
     { name = "myst-parser", extras = ["linkify"], specifier = ">=3.0.1" },
-    { name = "pydata-sphinx-theme", specifier = ">=0.16" },
-    { name = "sphinx", specifier = ">=7.4.7" },
+    { name = "pydata-sphinx-theme", specifier = ">=0.16.0" },
+    { name = "sphinx", specifier = ">=7.4.0" },
     { name = "sphinx-autoapi", specifier = ">=3.3.3" },
     { name = "sphinx-autobuild", specifier = ">=2024.10.3" },
     { name = "sphinx-click", specifier = ">=6" },
     { name = "sphinx-copybutton", specifier = ">=0.5.2" },
-    { name = "sphinxcontrib-napoleon", specifier = ">=0.7" },
-    { name = "sphinxcontrib-spelling", specifier = ">=8" },
+    { name = "sphinxcontrib-napoleon", specifier = ">=0.7.0" },
+    { name = "sphinxcontrib-spelling", specifier = ">=8.0.0" },
 ]
 tests = [
     { name = "beartype", specifier = ">=0.18.5" },
