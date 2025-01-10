@@ -639,7 +639,7 @@ name = "importlib-metadata"
 version = "8.5.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "zipp" },
+    { name = "zipp", marker = "python_full_version < '3.10'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/cd/12/33e59336dca5be0c398a7482335911a33aa0e20776128f038019f1a95f1b/importlib_metadata-8.5.0.tar.gz", hash = "sha256:71522656f0abace1d072b9e5481a48f07c138e00f079c38c8f883823f9c26bd7", size = 55304 }
 wheels = [
@@ -2466,7 +2466,7 @@ wheels = [
 
 [[package]]
 name = "whiteprints-template-context"
-version = "0.3.2.dev24+g3ddf6f9"
+version = "0.3.2.dev23+g9f2bb58.d20250110"
 source = { editable = "." }
 dependencies = [
     { name = "copier-templates-extensions" },
@@ -2521,6 +2521,7 @@ coverage = [
 ]
 dev = [
     { name = "babel" },
+    { name = "bandit" },
     { name = "beartype" },
     { name = "coverage" },
     { name = "hypothesis" },
@@ -2530,6 +2531,7 @@ dev = [
     { name = "pydata-sphinx-theme" },
     { name = "pylint" },
     { name = "pynvim" },
+    { name = "pyright" },
     { name = "pytest" },
     { name = "pytest-cov" },
     { name = "pytest-html" },
@@ -2637,6 +2639,7 @@ check-vulnerabilities = [{ name = "bandit", specifier = ">=1.7.10" }]
 coverage = [{ name = "coverage", specifier = ">=7.6.1" }]
 dev = [
     { name = "babel", specifier = ">=2.16" },
+    { name = "bandit", specifier = ">=1.7.10" },
     { name = "beartype", specifier = ">=0.18.5" },
     { name = "coverage", specifier = ">=7.6.1" },
     { name = "hypothesis", specifier = ">=6.110.1" },
@@ -2645,6 +2648,7 @@ dev = [
     { name = "pydata-sphinx-theme", specifier = ">=0.16.0" },
     { name = "pylint", specifier = ">=3.2.6" },
     { name = "pynvim", specifier = ">=0.4.3" },
+    { name = "pyright", specifier = ">=1.1.386" },
     { name = "pytest", specifier = ">=8.3.2" },
     { name = "pytest-cov", specifier = ">=5" },
     { name = "pytest-html", specifier = ">=4.1.1" },
