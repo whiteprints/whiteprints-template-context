@@ -1,7 +1,8 @@
 version = 1
 requires-python = ">=3.9, <4.0"
 resolution-markers = [
-    "python_full_version < '3.11'",
+    "python_full_version == '3.10.*'",
+    "python_full_version < '3.10'",
     "python_full_version == '3.11.*'",
     "python_full_version >= '3.12'",
 ]
@@ -66,14 +67,14 @@ wheels = [
 
 [[package]]
 name = "astroid"
-version = "3.3.5"
+version = "3.3.8"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "typing-extensions", marker = "python_full_version < '3.11'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/38/1e/326fb1d3d83a3bb77c9f9be29d31f2901e35acb94b0605c3f2e5085047f9/astroid-3.3.5.tar.gz", hash = "sha256:5cfc40ae9f68311075d27ef68a4841bdc5cc7f6cf86671b49f00607d30188e2d", size = 397229 }
+sdist = { url = "https://files.pythonhosted.org/packages/80/c5/5c83c48bbf547f3dd8b587529db7cf5a265a3368b33e85e76af8ff6061d3/astroid-3.3.8.tar.gz", hash = "sha256:a88c7994f914a4ea8572fac479459f4955eeccc877be3f2d959a33273b0cf40b", size = 398196 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/41/30/624365383fa4a40329c0f0bbbc151abc4a64e30dfc110fc8f6e2afcd02bb/astroid-3.3.5-py3-none-any.whl", hash = "sha256:a9d1c946ada25098d790e079ba2a1b112157278f3fb7e718ae6a9252f5835dc8", size = 274586 },
+    { url = "https://files.pythonhosted.org/packages/07/28/0bc8a17d6cd4cc3c79ae41b7105a2b9a327c110e5ddd37a8a27b29a5c8a2/astroid-3.3.8-py3-none-any.whl", hash = "sha256:187ccc0c248bfbba564826c26f070494f7bc964fd286b6d9fff4420e55de828c", size = 275153 },
 ]
 
 [[package]]
@@ -99,7 +100,7 @@ name = "bandit"
 version = "1.8.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "colorama", marker = "platform_system == 'Windows'" },
+    { name = "colorama", marker = "sys_platform == 'win32'" },
     { name = "pyyaml" },
     { name = "rich" },
     { name = "stevedore" },
@@ -264,7 +265,7 @@ name = "click"
 version = "8.1.7"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "colorama", marker = "platform_system == 'Windows'" },
+    { name = "colorama", marker = "sys_platform == 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz", hash = "sha256:ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de", size = 336121 }
 wheels = [
@@ -596,16 +597,16 @@ wheels = [
 
 [[package]]
 name = "hypothesis"
-version = "6.122.3"
+version = "6.123.13"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attrs" },
     { name = "exceptiongroup", marker = "python_full_version < '3.11'" },
     { name = "sortedcontainers" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/5a/21/c4c755ad5763f4c882a855b9966ac019c2314e5578b5f5eb39d9fe9fe64d/hypothesis-6.122.3.tar.gz", hash = "sha256:f4c927ce0ec739fa6266e4572949d0b54e24a14601a2bc5fec8f78e16af57918", size = 414395 }
+sdist = { url = "https://files.pythonhosted.org/packages/c3/57/db0f0f6dd394c406d51fae046c114ee6d5a6ff5a7193e7d7cc0b5d880172/hypothesis-6.123.13.tar.gz", hash = "sha256:4a680787b7f84d7df918d9c05203677931495e548bbc962aa1c9e4643add58f3", size = 420543 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/66/cb/44fe7e78c3cfbcb01f905b3b252eff6396e2f2e8e88b2d27b5140a6ac474/hypothesis-6.122.3-py3-none-any.whl", hash = "sha256:f0f57036d3b95b979491602b32c95b6725c3af678cccb6165d8de330857f3c83", size = 475651 },
+    { url = "https://files.pythonhosted.org/packages/7e/db/f714aff822383ee2ea076670741de3161d4be6ffb1e4da03b90ce1cb95a9/hypothesis-6.123.13-py3-none-any.whl", hash = "sha256:57c3b797664f6b45ce322a2e7854ee1c49fca67c07803cfa6ce2a9b825629d34", size = 482870 },
 ]
 
 [[package]]
@@ -1129,7 +1130,7 @@ name = "plumbum"
 version = "1.9.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "pywin32", marker = "platform_python_implementation != 'PyPy' and platform_system == 'Windows'" },
+    { name = "pywin32", marker = "platform_python_implementation != 'PyPy' and sys_platform == 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/f0/5d/49ba324ad4ae5b1a4caefafbce7a1648540129344481f2ed4ef6bb68d451/plumbum-1.9.0.tar.gz", hash = "sha256:e640062b72642c3873bd5bdc3effed75ba4d3c70ef6b6a7b907357a84d909219", size = 319083 }
 wheels = [
@@ -1300,7 +1301,7 @@ wheels = [
 
 [[package]]
 name = "pydata-sphinx-theme"
-version = "0.16.0"
+version = "0.16.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "accessible-pygments" },
@@ -1311,9 +1312,9 @@ dependencies = [
     { name = "sphinx" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/91/c3/5240f2a5dc0b4856655c003466f70aa50d676b1709e5b04f0bee296bbd28/pydata_sphinx_theme-0.16.0.tar.gz", hash = "sha256:721dd26e05fa8b992d66ef545536e6cbe0110afb9865820a08894af1ad6f7707", size = 2407197 }
+sdist = { url = "https://files.pythonhosted.org/packages/00/20/bb50f9de3a6de69e6abd6b087b52fa2418a0418b19597601605f855ad044/pydata_sphinx_theme-0.16.1.tar.gz", hash = "sha256:a08b7f0b7f70387219dc659bff0893a7554d5eb39b59d3b8ef37b8401b7642d7", size = 2412693 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ba/92/38f384061e1361fac7092c35e932c0e08026fb9080bf3fbf05f4c3bb6bda/pydata_sphinx_theme-0.16.0-py3-none-any.whl", hash = "sha256:18c810ee4e67e05281e371e156c1fb5bb0fa1f2747240461b225272f7d8d57d8", size = 6739948 },
+    { url = "https://files.pythonhosted.org/packages/e2/0d/8ba33fa83a7dcde13eb3c1c2a0c1cc29950a048bfed6d9b0d8b6bd710b4c/pydata_sphinx_theme-0.16.1-py3-none-any.whl", hash = "sha256:225331e8ac4b32682c18fcac5a57a6f717c4e632cea5dd0e247b55155faeccde", size = 6723264 },
 ]
 
 [[package]]
@@ -1338,7 +1339,7 @@ wheels = [
 
 [[package]]
 name = "pylint"
-version = "3.3.2"
+version = "3.3.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "astroid" },
@@ -1351,9 +1352,9 @@ dependencies = [
     { name = "tomlkit" },
     { name = "typing-extensions", marker = "python_full_version < '3.10'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/81/d8/4471b2cb4ad18b4af717918c468209bd2bd5a02c52f60be5ee8a71b5af2c/pylint-3.3.2.tar.gz", hash = "sha256:9ec054ec992cd05ad30a6df1676229739a73f8feeabf3912c995d17601052b01", size = 1516485 }
+sdist = { url = "https://files.pythonhosted.org/packages/17/fd/e9a739afac274a39596bbe562e9d966db6f3917fdb2bd7322ffc56da0ba2/pylint-3.3.3.tar.gz", hash = "sha256:07c607523b17e6d16e2ae0d7ef59602e332caa762af64203c24b41c27139f36a", size = 1516550 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/61/55/5eaf6c415f6ddb09b9b039278823a8e27fb81ea7a34ec80c6d9223b17f2e/pylint-3.3.2-py3-none-any.whl", hash = "sha256:77f068c287d49b8683cd7c6e624243c74f92890f767f106ffa1ddf3c0a54cb7a", size = 521873 },
+    { url = "https://files.pythonhosted.org/packages/91/e1/26d55acea92b1ea4d33672e48f09ceeb274e84d7d542a4fb9a32a556db46/pylint-3.3.3-py3-none-any.whl", hash = "sha256:26e271a2bc8bce0fc23833805a9076dd9b4d5194e2a02164942cb3cdc37b4183", size = 521918 },
 ]
 
 [[package]]
@@ -1381,15 +1382,15 @@ wheels = [
 
 [[package]]
 name = "pyright"
-version = "1.1.390"
+version = "1.1.391"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "nodeenv" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/ba/42/1e0392f35dd275f9f775baf7c86407cef7f6a0d9b8e099a93e5422a7e571/pyright-1.1.390.tar.gz", hash = "sha256:aad7f160c49e0fbf8209507a15e17b781f63a86a1facb69ca877c71ef2e9538d", size = 21950 }
+sdist = { url = "https://files.pythonhosted.org/packages/11/05/4ea52a8a45cc28897edb485b4102d37cbfd5fce8445d679cdeb62bfad221/pyright-1.1.391.tar.gz", hash = "sha256:66b2d42cdf5c3cbab05f2f4b76e8bec8aa78e679bfa0b6ad7b923d9e027cadb2", size = 21965 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/43/20/3f492ca789fb17962ad23619959c7fa642082621751514296c58de3bb801/pyright-1.1.390-py3-none-any.whl", hash = "sha256:ecebfba5b6b50af7c1a44c2ba144ba2ab542c227eb49bc1f16984ff714e0e110", size = 18579 },
+    { url = "https://files.pythonhosted.org/packages/ad/89/66f49552fbeb21944c8077d11834b2201514a56fd1b7747ffff9630f1bd9/pyright-1.1.391-py3-none-any.whl", hash = "sha256:54fa186f8b3e8a55a44ebfa842636635688670c6896dcf6cf4a7fc75062f4d15", size = 18579 },
 ]
 
 [[package]]
@@ -1664,7 +1665,7 @@ dependencies = [
     { name = "cloudpickle" },
     { name = "jinja2" },
     { name = "numpy" },
-    { name = "nvidia-ml-py", marker = "platform_system != 'Darwin'" },
+    { name = "nvidia-ml-py", marker = "sys_platform != 'darwin'" },
     { name = "psutil" },
     { name = "pydantic" },
     { name = "rich" },
@@ -1902,13 +1903,35 @@ wheels = [
 name = "sphinxcontrib-spelling"
 version = "8.0.0"
 source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "python_full_version < '3.10'",
+]
 dependencies = [
-    { name = "pyenchant" },
-    { name = "sphinx" },
+    { name = "pyenchant", marker = "python_full_version < '3.10'" },
+    { name = "sphinx", marker = "python_full_version < '3.10'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/38/88/d8d0e4ff3087199db984bd03d1d17c413bcdcdde0f5120d3cc0b4c8806b3/sphinxcontrib-spelling-8.0.0.tar.gz", hash = "sha256:199d0a16902ad80c387c2966dc9eb10f565b1fb15ccce17210402db7c2443e5c", size = 37610 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/87/f9/ec57149c1ab20efed1305aa89fbcd7a9e4a8edf9ef5fe9b75bdb13e1964e/sphinxcontrib_spelling-8.0.0-py3-none-any.whl", hash = "sha256:b27e0a16aef00bcfc888a6490dc3f16651f901dc475446c6882834278c8dc7b3", size = 16436 },
+]
+
+[[package]]
+name = "sphinxcontrib-spelling"
+version = "8.0.1"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "python_full_version == '3.10.*'",
+    "python_full_version == '3.11.*'",
+    "python_full_version >= '3.12'",
+]
+dependencies = [
+    { name = "pyenchant", marker = "python_full_version >= '3.10'" },
+    { name = "requests", marker = "python_full_version >= '3.10'" },
+    { name = "sphinx", marker = "python_full_version >= '3.10'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/71/04/099b55abd934cacccaedab9680c8238042eb3c722bdd420bc752d0eddb78/sphinxcontrib_spelling-8.0.1.tar.gz", hash = "sha256:f0447b6413c78b613b916c7891e36be85a105d1919c99784c53dfea2d8f8040f", size = 36005 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/03/30/05efe7261eac789cf3ba28ef5dfb76d719df30baae6881cb54a6801c0e8f/sphinxcontrib_spelling-8.0.1-py3-none-any.whl", hash = "sha256:21704857c1b5e26e06bb07d15927df41c9d7ecfc1843169ecd22cb59f24069ac", size = 14617 },
 ]
 
 [[package]]
@@ -2294,7 +2317,7 @@ wheels = [
 
 [[package]]
 name = "whiteprints-template-context"
-version = "0.3.2.dev1+g3f3ad94"
+version = "0.3.2.dev6+g00308fb"
 source = { editable = "." }
 dependencies = [
     { name = "copier-templates-extensions" },
@@ -2318,7 +2341,8 @@ build-documentation = [
     { name = "sphinx-click" },
     { name = "sphinx-copybutton" },
     { name = "sphinxcontrib-napoleon" },
-    { name = "sphinxcontrib-spelling" },
+    { name = "sphinxcontrib-spelling", version = "8.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
+    { name = "sphinxcontrib-spelling", version = "8.0.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
 ]
 check-exceptions = [
     { name = "tryceratops" },
@@ -2368,7 +2392,8 @@ dev = [
     { name = "sphinx-click" },
     { name = "sphinx-copybutton" },
     { name = "sphinxcontrib-napoleon" },
-    { name = "sphinxcontrib-spelling" },
+    { name = "sphinxcontrib-spelling", version = "8.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
+    { name = "sphinxcontrib-spelling", version = "8.0.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
     { name = "tryceratops" },
     { name = "xdoctest" },
     { name = "xenon" },
@@ -2403,7 +2428,8 @@ serve-documentation = [
     { name = "sphinx-click" },
     { name = "sphinx-copybutton" },
     { name = "sphinxcontrib-napoleon" },
-    { name = "sphinxcontrib-spelling" },
+    { name = "sphinxcontrib-spelling", version = "8.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
+    { name = "sphinxcontrib-spelling", version = "8.0.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
 ]
 tests = [
     { name = "beartype" },

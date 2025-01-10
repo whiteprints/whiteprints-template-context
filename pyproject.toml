@@ -7,7 +7,7 @@ build-backend = "hatchling.build"
 requires = [
     "hatch-fancy-pypi-readme>=24.1",
     "hatch-vcs>=0.4",
-    "hatchling>=1.26",
+    "hatchling>=1.27",
 ]
 
 [project]
@@ -150,6 +150,7 @@ keep_full_version = true
 max_supported_python = "3.13"
 
 [tool.uv]
+required-version = ">=0.5.16"
 managed = true
 cache-keys = [
     { git = { commit = true, tags = true } },
