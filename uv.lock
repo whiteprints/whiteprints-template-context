@@ -1,7 +1,8 @@
 version = 1
 requires-python = ">=3.9, <4.0"
 resolution-markers = [
-    "python_full_version < '3.11'",
+    "python_full_version == '3.10.*'",
+    "python_full_version < '3.10'",
     "python_full_version == '3.11.*'",
     "python_full_version >= '3.12'",
 ]
@@ -1902,13 +1903,35 @@ wheels = [
 name = "sphinxcontrib-spelling"
 version = "8.0.0"
 source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "python_full_version < '3.10'",
+]
 dependencies = [
-    { name = "pyenchant" },
-    { name = "sphinx" },
+    { name = "pyenchant", marker = "python_full_version < '3.10'" },
+    { name = "sphinx", marker = "python_full_version < '3.10'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/38/88/d8d0e4ff3087199db984bd03d1d17c413bcdcdde0f5120d3cc0b4c8806b3/sphinxcontrib-spelling-8.0.0.tar.gz", hash = "sha256:199d0a16902ad80c387c2966dc9eb10f565b1fb15ccce17210402db7c2443e5c", size = 37610 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/87/f9/ec57149c1ab20efed1305aa89fbcd7a9e4a8edf9ef5fe9b75bdb13e1964e/sphinxcontrib_spelling-8.0.0-py3-none-any.whl", hash = "sha256:b27e0a16aef00bcfc888a6490dc3f16651f901dc475446c6882834278c8dc7b3", size = 16436 },
+]
+
+[[package]]
+name = "sphinxcontrib-spelling"
+version = "8.0.1"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "python_full_version == '3.10.*'",
+    "python_full_version == '3.11.*'",
+    "python_full_version >= '3.12'",
+]
+dependencies = [
+    { name = "pyenchant", marker = "python_full_version >= '3.10'" },
+    { name = "requests", marker = "python_full_version >= '3.10'" },
+    { name = "sphinx", marker = "python_full_version >= '3.10'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/71/04/099b55abd934cacccaedab9680c8238042eb3c722bdd420bc752d0eddb78/sphinxcontrib_spelling-8.0.1.tar.gz", hash = "sha256:f0447b6413c78b613b916c7891e36be85a105d1919c99784c53dfea2d8f8040f", size = 36005 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/03/30/05efe7261eac789cf3ba28ef5dfb76d719df30baae6881cb54a6801c0e8f/sphinxcontrib_spelling-8.0.1-py3-none-any.whl", hash = "sha256:21704857c1b5e26e06bb07d15927df41c9d7ecfc1843169ecd22cb59f24069ac", size = 14617 },
 ]
 
 [[package]]
@@ -2318,7 +2341,8 @@ build-documentation = [
     { name = "sphinx-click" },
     { name = "sphinx-copybutton" },
     { name = "sphinxcontrib-napoleon" },
-    { name = "sphinxcontrib-spelling" },
+    { name = "sphinxcontrib-spelling", version = "8.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
+    { name = "sphinxcontrib-spelling", version = "8.0.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
 ]
 check-exceptions = [
     { name = "tryceratops" },
@@ -2368,7 +2392,8 @@ dev = [
     { name = "sphinx-click" },
     { name = "sphinx-copybutton" },
     { name = "sphinxcontrib-napoleon" },
-    { name = "sphinxcontrib-spelling" },
+    { name = "sphinxcontrib-spelling", version = "8.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
+    { name = "sphinxcontrib-spelling", version = "8.0.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
     { name = "tryceratops" },
     { name = "xdoctest" },
     { name = "xenon" },
@@ -2403,7 +2428,8 @@ serve-documentation = [
     { name = "sphinx-click" },
     { name = "sphinx-copybutton" },
     { name = "sphinxcontrib-napoleon" },
-    { name = "sphinxcontrib-spelling" },
+    { name = "sphinxcontrib-spelling", version = "8.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
+    { name = "sphinxcontrib-spelling", version = "8.0.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
 ]
 tests = [
     { name = "beartype" },
