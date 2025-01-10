@@ -19,6 +19,9 @@ __all__: Final = [
 __version__: Final = metadata.version(__package__ or "")
 """The package version number as found by importlib metadata."""
 
+__metadata__: Final = metadata.metadata(__package__ or "")
+"""The package metadata."""
+
 __license__: Final = metadata.metadata(__package__ or "")["License-Expression"]
 """The package code license as found by importlib metadata."""
 
