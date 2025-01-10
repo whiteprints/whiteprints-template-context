@@ -632,7 +632,7 @@ name = "importlib-metadata"
 version = "8.5.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "zipp", marker = "python_full_version < '3.11'" },
+    { name = "zipp", marker = "python_full_version < '3.10'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/cd/12/33e59336dca5be0c398a7482335911a33aa0e20776128f038019f1a95f1b/importlib_metadata-8.5.0.tar.gz", hash = "sha256:71522656f0abace1d072b9e5481a48f07c138e00f079c38c8f883823f9c26bd7", size = 55304 }
 wheels = [
@@ -1457,7 +1457,7 @@ wheels = [
 
 [[package]]
 name = "pytest-md-report"
-version = "0.6.2"
+version = "0.6.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pytablewriter" },
@@ -1465,9 +1465,9 @@ dependencies = [
     { name = "tcolorpy" },
     { name = "typepy" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/62/b3/b68a712044b2096c28edf73e262e17e56c82a30f55abc16b8e9d39c24650/pytest_md_report-0.6.2.tar.gz", hash = "sha256:5e96c655ebc9b5c3c7b78bf7c5382c1f68056e96904430252790f8737de5ce99", size = 283407 }
+sdist = { url = "https://files.pythonhosted.org/packages/6f/ec/5864e21c74e6ab2c493578bd6bbef775c4db4c1e69a2aad8830408341170/pytest_md_report-0.6.3.tar.gz", hash = "sha256:7e91ed0c0421b1493c1126ef996bdb521882a96a20cbd5b2cf0a38945495a852", size = 283723 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ee/e9/6fd1b512826377e17193289147d8a697e0b56bbba4dbee709e62e7d8e94a/pytest_md_report-0.6.2-py3-none-any.whl", hash = "sha256:66e27efa5c155c87eb4700d60876e61a85c13361448c4031fda964c43e63c9b9", size = 13905 },
+    { url = "https://files.pythonhosted.org/packages/22/ad/99382de65e29fa6230b592f176c4290084667dbf1404c0ef266a34bb2c46/pytest_md_report-0.6.3-py3-none-any.whl", hash = "sha256:374126c013b29aab4dc585a318c4bbc5213fabafc101f9812f428cc4847b6a92", size = 13928 },
 ]
 
 [[package]]
@@ -2317,7 +2317,7 @@ wheels = [
 
 [[package]]
 name = "whiteprints-template-context"
-version = "0.3.2.dev6+g00308fb"
+version = "0.4.0"
 source = { editable = "." }
 dependencies = [
     { name = "copier-templates-extensions" },
