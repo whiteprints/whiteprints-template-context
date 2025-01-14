@@ -604,16 +604,16 @@ wheels = [
 
 [[package]]
 name = "hypothesis"
-version = "6.123.16"
+version = "6.123.17"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attrs" },
     { name = "exceptiongroup", marker = "python_full_version < '3.11'" },
     { name = "sortedcontainers" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/10/fa/bc053826d2f01a322f9577cdfb1318648adb30cde379cef635f3cd716d99/hypothesis-6.123.16.tar.gz", hash = "sha256:2af13b9795d2c4b9c66865569a944f2d8c3812b087989bc0f408e825bb10c8e6", size = 418240 }
+sdist = { url = "https://files.pythonhosted.org/packages/15/a7/695b2bcb4e8438e1d4683efa6877fc95be293a11251471d4552d6dd08259/hypothesis-6.123.17.tar.gz", hash = "sha256:5850893975b4f08e893ddc10f1d468bc7e011d59703f70fe06a10161e426e602", size = 418572 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e8/c8/693301506622348feb165d181276652a2dcac93e6068513b8502ffafd47a/hypothesis-6.123.16-py3-none-any.whl", hash = "sha256:ab898adf001823868ff21a20355944c2eb5ce776f20e9983c7d79b535675e6c3", size = 480548 },
+    { url = "https://files.pythonhosted.org/packages/11/8a/f1c166f048df4b314d0d38e9530b7af516a16160873d724bb416084d6990/hypothesis-6.123.17-py3-none-any.whl", hash = "sha256:5c949fb44935e32c61c64abfcc3975eec41f8205ade2223073ba074c1e078ead", size = 480880 },
 ]
 
 [[package]]
@@ -2466,7 +2466,7 @@ wheels = [
 
 [[package]]
 name = "whiteprints-template-context"
-version = "0.5.1.dev4+gc8c4bb7"
+version = "0.5.1.dev6+g1dd8c45"
 source = { editable = "." }
 dependencies = [
     { name = "copier-templates-extensions" },
