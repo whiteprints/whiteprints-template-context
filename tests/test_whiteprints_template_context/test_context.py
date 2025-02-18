@@ -98,7 +98,7 @@ class TestContextUpdater:
             "project_name": "Test Project",
             "code_license_id": "MIT",
             "resources_license_id": "Apache-2.0",
-        }
+        },
     ])
 
     @staticmethod
@@ -191,3 +191,15 @@ class TestContextUpdater:
         assert updated_context["code_license_text"].startswith("[MIT]"), (
             "License text replacement failed"
         )
+
+    @staticmethod
+    def test_empty_environment(
+        context: dict[str, str],
+    ) -> None:
+        """Test that the code do not fail if the environment is empty.
+
+        This was introduced to solve https://github.com/copier-org/copier-templates-extensions/issues/7
+        """
+        updater = ContextUpdater({})
+        updated_context = updater.hook(context)
+        assert updated_context

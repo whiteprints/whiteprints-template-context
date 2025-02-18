@@ -98,8 +98,8 @@ class ContextUpdater(ContextHook):  # pylint: disable=abstract-method
         project settings and license information.
     """
 
-    @override
-    def hook(self, context: dict[str, Any]) -> dict[str, Any]:
+    @staticmethod
+    def _hook(context: dict[str, Any]) -> dict[str, Any]:
         latest_python = LATEST_PYTHON
         target_python_minor = context["target_python_version"][3:]
 
@@ -138,3 +138,10 @@ class ContextUpdater(ContextHook):  # pylint: disable=abstract-method
             ].replace(symbol, f"[{symbol}](../LICENSES/{symbol}.txt)")
 
         return context
+
+    @override
+    def hook(self, context: dict[str, Any]) -> dict[str, Any]:
+        try:
+            return self._hook(context)
+        except KeyError:
+            return {}
