@@ -194,13 +194,13 @@ class TestContextUpdater:
 
     @staticmethod
     def test_empty_environment(
-        context: dict[str, str],
+        environment: Environment,
     ) -> None:
         """Test that the code do not fail if the environment is empty.
 
         This was introduced to solve
         https://github.com/copier-org/copier-templates-extensions/issues/7
         """
-        updater = ContextUpdater({})
-        updated_context = updater.hook(context)
-        assert updated_context
+        updater = ContextUpdater(environment)
+        updated_context = updater.hook({})
+        assert not updated_context
