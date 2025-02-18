@@ -198,7 +198,8 @@ class TestContextUpdater:
     ) -> None:
         """Test that the code do not fail if the environment is empty.
 
-        This was introduced to solve https://github.com/copier-org/copier-templates-extensions/issues/7
+        This was introduced to solve
+        https://github.com/copier-org/copier-templates-extensions/issues/7
         """
         updater = ContextUpdater({})
         updated_context = updater.hook(context)
