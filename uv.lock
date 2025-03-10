@@ -326,14 +326,14 @@ wheels = [
 
 [[package]]
 name = "copier-templates-extensions"
-version = "0.3.0"
+version = "0.3.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "copier" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/ac/0d/3e047d28ffe6712e6936a72d8ae288a0e24e7995c645b011db82edb7fb3b/copier-templates-extensions-0.3.0.tar.gz", hash = "sha256:48b3f5213ee913b931df40e4e9325b58b9c9a741f1052a7da1b247ed991f5150", size = 12113 }
+sdist = { url = "https://files.pythonhosted.org/packages/f2/c4/1827fa1457401eea9c2665423a552614dbe13c1341587b48aa379c928405/copier_templates_extensions-0.3.1.tar.gz", hash = "sha256:f604f6dc58814204b79aa0697d919b94077b28942595d2fa0a20e4d94b6890a6", size = 34921 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/03/93/7ebfcbe54410f2d43c8bb8bda1910f7d921b2d5efc52289718969ab0a63d/copier_templates_extensions-0.3.0-py3-none-any.whl", hash = "sha256:733e709536e03768b1201c79525534d7fd153932cf764492a0396692e513f244", size = 7417 },
+    { url = "https://files.pythonhosted.org/packages/eb/a7/85c6ac6e91d80eede4683fa7dda285cf77720ac0f567680a24322249d810/copier_templates_extensions-0.3.1-py3-none-any.whl", hash = "sha256:d0834ecacaaeef84f81e745fd8fdcd519cb0731ddb5bd45bc0129633c717f5e2", size = 9355 },
 ]
 
 [[package]]
